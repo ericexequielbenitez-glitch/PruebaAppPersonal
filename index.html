@@ -55,9 +55,9 @@ body{
     padding-bottom:20px;
 }
 
-.nav-item svg{
-    width:18px;
-    height:18px;
+.nav-item img{
+    width:20px;
+    height:20px;
 }
 
 .nav-item:hover{
@@ -79,11 +79,6 @@ body{
     width:1px;
     height:22px;
     background:#e5e7eb;
-}
-
-.utility{
-    font-size:18px;
-    cursor:pointer;
 }
 
 .user{
@@ -174,6 +169,11 @@ body{
     transition:.2s ease;
 }
 
+.action-item img{
+    width:32px;
+    margin-bottom:8px;
+}
+
 .action-item:hover{
     transform:translateY(-3px);
     box-shadow:0 8px 20px rgba(0,0,0,0.06);
@@ -203,19 +203,19 @@ body{
     <div class="nav">
 
         <a class="nav-item" href="https://www.personal.com.ar/ayuda/telefonia" target="_blank">
-            📱 Móvil
+            <img src="assets/movil.png"> Móvil
         </a>
 
         <a class="nav-item" href="#">
-            🌐 Fibra
+            <img src="assets/fibra.png"> Fibra
         </a>
 
         <a class="nav-item" href="https://www.personal.com.ar/flow" target="_blank">
-            ▶ Flow
+            <img src="assets/flow.png"> Flow
         </a>
 
         <a class="nav-item" href="https://www.personalpay.com.ar/" target="_blank">
-            💳 Pay
+            <img src="assets/pay.png"> Pay
         </a>
 
         <a class="nav-item" href="https://tienda.personal.com.ar/" target="_blank">
@@ -223,17 +223,12 @@ body{
         </a>
 
         <a class="nav-item" href="https://www.personal.com.ar/smarthome" target="_blank">
-            🏠 Smarthome
+            <img src="assets/smarthome.png"> Smarthome
         </a>
 
         <a class="nav-item active" href="https://www.personal.com.ar/ayuda" target="_blank">
             ❓ Ayuda
         </a>
-
-        <div class="divider"></div>
-
-        <span class="utility">📍</span>
-        <span class="utility">🛒</span>
 
         <div class="divider"></div>
 
@@ -277,10 +272,25 @@ body{
     </div>
 
     <div class="actions">
-        <div class="action-item">Mis facturas</div>
-        <div class="action-item">Detalle de consumos</div>
-        <div class="action-item">Packs</div>
-        <div class="action-item">Mejorar plan</div>
+        <div class="action-item">
+            <img src="assets/facturas.png">
+            Mis facturas
+        </div>
+
+        <div class="action-item">
+            Detalle de consumos
+        </div>
+
+        <div class="action-item">
+            <img src="assets/packs.png">
+            Packs
+        </div>
+
+        <div class="action-item">
+            <img src="assets/mejorar.png">
+            Mejorar plan
+        </div>
+
         <div class="action-item">Mis pedidos</div>
         <div class="action-item">Roaming</div>
         <div class="action-item">Soporte técnico</div>
