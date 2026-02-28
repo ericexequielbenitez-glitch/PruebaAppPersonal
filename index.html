@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal</title>
 
-<!-- Tipografía similar a la real -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -13,7 +12,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Inter', sans-serif;
+    font-family:'Inter',sans-serif;
 }
 
 body{
@@ -28,40 +27,79 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 80px;
+    padding:0 70px;
     border-bottom:1px solid #e5e7eb;
 }
 
 .logo{
-    font-size:22px;
+    font-size:24px;
     font-weight:600;
     color:#00a4e0;
 }
 
 .nav{
     display:flex;
+    align-items:center;
     gap:28px;
     font-size:14px;
-    color:#4b5563;
 }
 
-.nav a{
+.nav-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
     text-decoration:none;
     color:#4b5563;
     font-weight:500;
+    position:relative;
+    padding-bottom:20px;
 }
 
-.nav a:hover{
+.nav-item svg{
+    width:18px;
+    height:18px;
+}
+
+.nav-item:hover{
     color:#00a4e0;
 }
 
-/* CONTENEDOR CENTRAL */
+.nav-item.active::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:#00a4e0;
+    border-radius:3px;
+}
+
+.divider{
+    width:1px;
+    height:22px;
+    background:#e5e7eb;
+}
+
+.utility{
+    font-size:18px;
+    cursor:pointer;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-weight:500;
+}
+
+/* WRAPPER */
 .wrapper{
     width:1050px;
     margin:48px auto;
 }
 
-/* TARJETAS */
+/* CARD */
 .card{
     background:#ffffff;
     border-radius:20px;
@@ -70,27 +108,22 @@ body{
     margin-bottom:32px;
 }
 
-.card-header{
+.card-title{
     font-size:16px;
     font-weight:600;
-    margin-bottom:16px;
+    margin-bottom:18px;
 }
 
-/* SEPARADOR INTERNO */
-.divider{
+.divider-horizontal{
     height:1px;
     background:#e5e7eb;
-    margin:18px 0;
+    margin:20px 0;
 }
 
-/* PROGRESS BAR */
-.progress-wrapper{
-    margin-top:10px;
-}
-
+/* PROGRESS */
 .progress-label{
     font-size:14px;
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
 .progress{
@@ -114,15 +147,8 @@ body{
     margin-top:8px;
 }
 
-/* ESTADO AL DIA */
-.status-title{
-    font-size:16px;
-    font-weight:600;
-    margin-bottom:6px;
-}
-
+/* STATUS */
 .badge{
-    display:inline-block;
     background:#d1fae5;
     color:#065f46;
     padding:6px 14px;
@@ -131,10 +157,10 @@ body{
     margin-left:8px;
 }
 
-/* GRID DE ACCIONES */
+/* ACTION GRID */
 .actions{
     display:grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns:repeat(8,1fr);
     gap:20px;
 }
 
@@ -145,7 +171,7 @@ body{
     text-align:center;
     font-size:13px;
     box-shadow:0 4px 12px rgba(0,0,0,0.04);
-    transition:all .2s ease;
+    transition:.2s ease;
 }
 
 .action-item:hover{
@@ -155,89 +181,101 @@ body{
 
 /* RESPONSIVE */
 @media(max-width:1200px){
-    .wrapper{
-        width:90%;
-    }
-
-    .actions{
-        grid-template-columns: repeat(4, 1fr);
-    }
+    .wrapper{width:90%;}
+    .actions{grid-template-columns:repeat(4,1fr);}
 }
 
 @media(max-width:768px){
-    .header{
-        padding:0 20px;
-    }
-
-    .nav{
-        flex-wrap:wrap;
-        gap:15px;
-    }
-
-    .actions{
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .header{padding:0 20px;}
+    .nav{flex-wrap:wrap;gap:16px;}
+    .actions{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <div class="header">
+
     <div class="logo">personal</div>
 
     <div class="nav">
-        <a href="https://www.personal.com.ar/ayuda/telefonia?_gl=1*2vcl00*_gcl_au*MTAwOTQ4NzY5LjE3NzIxMDczNTA.*_ga*MTQyMzk3NDU4LjE3NzIxMDczNTA.*_ga_GH176DPKW4*czE3NzIyOTQyNTUkbzEkZzEkdDE3NzIyOTQyNzEkajQ0JGwwJGgw" target="_blank">Móvil</a>
-        <a href="#">Fibra</a>
-        <a href="https://www.personal.com.ar/flow" target="_blank">Flow</a>
-        <a href="https://www.personalpay.com.ar/" target="_blank">Pay</a>
-        <a href="https://tienda.personal.com.ar/?_gl=1*3bm6r7*_gcl_au*MTAwOTQ4NzY5LjE3NzIxMDczNTA.*_ga*MTQyMzk3NDU4LjE3NzIxMDczNTA.*_ga_1KQZC99M3L*czE3NzIyOTQyMDQkbzckZzEkdDE3NzIyOTQ2NDkkajU0JGwwJGgw" target="_blank">Tienda</a>
-        <a href="https://www.personal.com.ar/smarthome?_gl=1*1hanv5h*_gcl_au*MTAwOTQ4NzY5LjE3NzIxMDczNTA.*_ga*MTQyMzk3NDU4LjE3NzIxMDczNTA.*_ga_1KQZC99M3L*czE3NzIyOTQyMDQkbzckZzEkdDE3NzIyOTQ3MDgkajU5JGwwJGgw" target="_blank">Smarthome</a>
-        <a href="https://www.personal.com.ar/ayuda" target="_blank">Ayuda</a>
+
+        <a class="nav-item" href="https://www.personal.com.ar/ayuda/telefonia" target="_blank">
+            📱 Móvil
+        </a>
+
+        <a class="nav-item" href="#">
+            🌐 Fibra
+        </a>
+
+        <a class="nav-item" href="https://www.personal.com.ar/flow" target="_blank">
+            ▶ Flow
+        </a>
+
+        <a class="nav-item" href="https://www.personalpay.com.ar/" target="_blank">
+            💳 Pay
+        </a>
+
+        <a class="nav-item" href="https://tienda.personal.com.ar/" target="_blank">
+            🛍 Tienda
+        </a>
+
+        <a class="nav-item" href="https://www.personal.com.ar/smarthome" target="_blank">
+            🏠 Smarthome
+        </a>
+
+        <a class="nav-item active" href="https://www.personal.com.ar/ayuda" target="_blank">
+            ❓ Ayuda
+        </a>
+
+        <div class="divider"></div>
+
+        <span class="utility">📍</span>
+        <span class="utility">🛒</span>
+
+        <div class="divider"></div>
+
+        <div class="user">👤 Eric Ezequiel</div>
+
     </div>
 </div>
 
-<!-- CONTENIDO -->
+<!-- CONTENT -->
 <div class="wrapper">
 
-    <!-- MIS DISPONIBLES -->
     <div class="card">
-        <div class="card-header">Mis disponibles</div>
+        <div class="card-title">Mis disponibles</div>
 
-        <div class="progress-wrapper">
-            <div class="progress-label">Datos para todo uso</div>
+        <div class="progress-label">Datos para todo uso</div>
 
-            <div class="progress">
-                <div class="progress-bar"></div>
-            </div>
-
-            <div class="progress-info">
-                <span>23,4 GB disponibles</span>
-                <span>48 GB</span>
-            </div>
+        <div class="progress">
+            <div class="progress-bar"></div>
         </div>
 
-        <div class="divider"></div>
+        <div class="progress-info">
+            <span>23,4 GB disponibles</span>
+            <span>48 GB</span>
+        </div>
+
+        <div class="divider-horizontal"></div>
 
         <small style="color:#6b7280;">
             Los gigas del plan se renuevan el 14/03/26.
         </small>
     </div>
 
-    <!-- ESTADO -->
     <div class="card">
-        <div class="status-title">¡Estás al día!</div>
-        <div>
-            No tenés débitos pendientes.
-            <span class="badge">Tenés a favor: $52.427,11</span>
-        </div>
+        <div style="font-weight:600;margin-bottom:8px;">¡Estás al día!</div>
+        No tenés débitos pendientes.
+        <span class="badge">Tenés a favor: $52.427,11</span>
 
-        <div class="divider"></div>
+        <div class="divider-horizontal"></div>
 
         Débito automático activo
     </div>
 
-    <!-- ACCIONES -->
     <div class="actions">
         <div class="action-item">Mis facturas</div>
         <div class="action-item">Detalle de consumos</div>
