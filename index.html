@@ -5,176 +5,248 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal</title>
 
+<!-- Tipografía similar a la real -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
+    font-family:'Inter', sans-serif;
 }
 
 body{
-    background:#f3f4f6;
+    background:#f4f6f8;
+    color:#1f2937;
 }
 
 /* HEADER */
-.topbar{
+.header{
+    background:#ffffff;
+    height:64px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
-    background:white;
-    border-bottom:1px solid #ddd;
+    justify-content:space-between;
+    padding:0 80px;
+    border-bottom:1px solid #e5e7eb;
 }
 
 .logo{
-    font-size:24px;
+    font-size:22px;
+    font-weight:600;
     color:#00a4e0;
-    font-weight:bold;
 }
 
-.menu{
+.nav{
     display:flex;
-    gap:25px;
+    gap:28px;
+    font-size:14px;
+    color:#4b5563;
 }
 
-.menu a{
+.nav a{
     text-decoration:none;
     color:#4b5563;
-    font-size:14px;
+    font-weight:500;
 }
 
-.menu a:hover{
+.nav a:hover{
     color:#00a4e0;
 }
 
-/* CONTENIDO */
-.container{
-    width:75%;
-    margin:40px auto;
+/* CONTENEDOR CENTRAL */
+.wrapper{
+    width:1050px;
+    margin:48px auto;
 }
 
+/* TARJETAS */
 .card{
-    background:white;
-    border-radius:16px;
-    padding:25px;
-    box-shadow:0 4px 14px rgba(0,0,0,0.08);
-    margin-bottom:30px;
+    background:#ffffff;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    padding:28px 32px;
+    margin-bottom:32px;
 }
 
-.title{
-    font-size:18px;
-    margin-bottom:15px;
+.card-header{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:16px;
+}
+
+/* SEPARADOR INTERNO */
+.divider{
+    height:1px;
+    background:#e5e7eb;
+    margin:18px 0;
+}
+
+/* PROGRESS BAR */
+.progress-wrapper{
+    margin-top:10px;
+}
+
+.progress-label{
+    font-size:14px;
+    margin-bottom:8px;
 }
 
 .progress{
-    background:#e5e7eb;
     height:8px;
+    background:#e5e7eb;
     border-radius:20px;
     overflow:hidden;
-    margin:10px 0;
 }
 
 .progress-bar{
     width:48%;
     height:8px;
     background:#0077b6;
+    border-radius:20px;
 }
 
-.green{
-    background:#d1fae5;
-    padding:8px 12px;
-    display:inline-block;
-    border-radius:10px;
-    font-size:13px;
-    margin-top:10px;
-}
-
-.icons{
+.progress-info{
     display:flex;
     justify-content:space-between;
-    flex-wrap:wrap;
+    font-size:14px;
+    margin-top:8px;
+}
+
+/* ESTADO AL DIA */
+.status-title{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.badge{
+    display:inline-block;
+    background:#d1fae5;
+    color:#065f46;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:13px;
+    margin-left:8px;
+}
+
+/* GRID DE ACCIONES */
+.actions{
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
     gap:20px;
 }
 
-.icons div{
+.action-item{
     background:#f9fafb;
-    padding:15px 20px;
-    border-radius:12px;
+    border-radius:16px;
+    padding:18px 10px;
+    text-align:center;
     font-size:13px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    box-shadow:0 4px 12px rgba(0,0,0,0.04);
+    transition:all .2s ease;
+}
+
+.action-item:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
 /* RESPONSIVE */
-@media(max-width:900px){
-    .container{
+@media(max-width:1200px){
+    .wrapper{
         width:90%;
     }
 
-    .menu{
+    .actions{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(max-width:768px){
+    .header{
+        padding:0 20px;
+    }
+
+    .nav{
         flex-wrap:wrap;
         gap:15px;
     }
 
-    .icons{
-        justify-content:center;
+    .actions{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 </style>
-
 </head>
 <body>
 
-<div class="topbar">
+<!-- HEADER -->
+<div class="header">
     <div class="logo">personal</div>
 
-    <div class="menu">
+    <div class="nav">
         <a href="https://www.personal.com.ar/ayuda/telefonia?_gl=1*2vcl00*_gcl_au*MTAwOTQ4NzY5LjE3NzIxMDczNTA.*_ga*MTQyMzk3NDU4LjE3NzIxMDczNTA.*_ga_GH176DPKW4*czE3NzIyOTQyNTUkbzEkZzEkdDE3NzIyOTQyNzEkajQ0JGwwJGgw" target="_blank">Móvil</a>
-
         <a href="#">Fibra</a>
-
         <a href="https://www.personal.com.ar/flow" target="_blank">Flow</a>
-
         <a href="https://www.personalpay.com.ar/" target="_blank">Pay</a>
-
         <a href="https://tienda.personal.com.ar/?_gl=1*3bm6r7*_gcl_au*MTAwOTQ4NzY5LjE3NzIxMDczNTA.*_ga*MTQyMzk3NDU4LjE3NzIxMDczNTA.*_ga_1KQZC99M3L*czE3NzIyOTQyMDQkbzckZzEkdDE3NzIyOTQ2NDkkajU0JGwwJGgw" target="_blank">Tienda</a>
-
         <a href="https://www.personal.com.ar/smarthome?_gl=1*1hanv5h*_gcl_au*MTAwOTQ4NzY5LjE3NzIxMDczNTA.*_ga*MTQyMzk3NDU4LjE3NzIxMDczNTA.*_ga_1KQZC99M3L*czE3NzIyOTQyMDQkbzckZzEkdDE3NzIyOTQ3MDgkajU5JGwwJGgw" target="_blank">Smarthome</a>
-
         <a href="https://www.personal.com.ar/ayuda" target="_blank">Ayuda</a>
     </div>
 </div>
 
-<div class="container">
+<!-- CONTENIDO -->
+<div class="wrapper">
 
+    <!-- MIS DISPONIBLES -->
     <div class="card">
-        <div class="title">Mis disponibles</div>
-        Datos para todo uso
+        <div class="card-header">Mis disponibles</div>
 
-        <div class="progress">
-            <div class="progress-bar"></div>
+        <div class="progress-wrapper">
+            <div class="progress-label">Datos para todo uso</div>
+
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+
+            <div class="progress-info">
+                <span>23,4 GB disponibles</span>
+                <span>48 GB</span>
+            </div>
         </div>
 
-        23,4 GB disponibles de 48 GB
+        <div class="divider"></div>
+
+        <small style="color:#6b7280;">
+            Los gigas del plan se renuevan el 14/03/26.
+        </small>
     </div>
 
+    <!-- ESTADO -->
     <div class="card">
-        <strong>¡Estás al día!</strong><br>
-        No tenés débitos pendientes.
-        <div class="green">Tenés a favor: $52.427,11</div>
-        <br><br>
+        <div class="status-title">¡Estás al día!</div>
+        <div>
+            No tenés débitos pendientes.
+            <span class="badge">Tenés a favor: $52.427,11</span>
+        </div>
+
+        <div class="divider"></div>
+
         Débito automático activo
     </div>
 
-    <div class="icons">
-        <div>Mis facturas</div>
-        <div>Detalle de consumos</div>
-        <div>Packs</div>
-        <div>Mejorar plan</div>
-        <div>Mis pedidos</div>
-        <div>Roaming</div>
-        <div>Soporte técnico</div>
-        <div>Más opciones</div>
+    <!-- ACCIONES -->
+    <div class="actions">
+        <div class="action-item">Mis facturas</div>
+        <div class="action-item">Detalle de consumos</div>
+        <div class="action-item">Packs</div>
+        <div class="action-item">Mejorar plan</div>
+        <div class="action-item">Mis pedidos</div>
+        <div class="action-item">Roaming</div>
+        <div class="action-item">Soporte técnico</div>
+        <div class="action-item">Más opciones</div>
     </div>
 
 </div>
